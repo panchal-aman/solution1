@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="block">
+    <div class="container">
+      
+        <h3>Your Result</h3>
+        <div class="container_circle">
+          <h1>76</h1>
+          <h5>of 100</h5>
+        </div>
+        <h2>Great</h2>
+        <h4>You Scored higher than 65% of the people who have taken these tests.</h4>
+    </div>
+    
+
+
+    <div class="container" id="container">
+      <h2 style="text-align: left;"><strong>Summary</strong></h2>
+      <div class="container_list" id="container_list"></div>
+
+      <button id="container_btn">Continue</button>
+      
+    </div>
+
+  </div>
+  
+  <script type="module">
+    import data from './data.json' assert {type: 'json'};
+
+    var container_list = document.querySelector('#container_list');
+
+
+    var accordionHtml = data.map(item => {
+      return `<div class="accordion_container" style="color:${item.color}; background-color: rgba(${item.color},0.5)">
+              <div class="image_container"><img src=${item.icon} alt="loading..."/></div>
+              <p>${item.category}</p>
+              <strong style="color:black">${item.score}/100</strong>
+          </div>`;
+    });
+
+    container_list.innerHTML = accordionHtml;
+
+
+
+
+  </script>
+</body>
+
+</html>
