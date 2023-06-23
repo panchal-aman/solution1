@@ -2,6 +2,11 @@
     font-family: HankenFont;
     src: url(assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
 }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body{
     display: flex;
@@ -9,17 +14,21 @@ body{
     align-items: center;
     height: 100vh;
     margin: 0;
-   
+    min-width: 320px;
+    overflow:scroll;
 }
 #block{
+    
+    min-height: 70%;
     font-family: HankenFont;
     display: flex;
-    width: 40%;
-
+    min-width: 50%;
+    box-shadow: 3px 3px 5px #7a70e73d;
+    border-radius: 20px;
 }
 .container{
     width: 50%;
-    padding: 2%;
+    padding: 6%;
     display: flexbox;
     text-align: center;
 
@@ -32,43 +41,51 @@ body{
     
 }
 .container .container_circle{
-    margin: auto;
+    
+    margin:20px auto;
     line-height: normal;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     background: linear-gradient(to bottom ,#4D22C9, #4534F2);
     border-radius: 50%;
     align-items: center;
 }
 .container .container_circle h1{
     position: relative;
-    top: 35%;
+    font-size: 3rem;
+    top: 30%;
 }
 .container .container_circle h5{
     position: relative;
-    top: 20%;
+    bottom: -30%;
 }
-
+.container h4{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
 #container{
-    box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.596);
-    border-radius: 10px;
+    padding: 1rem 0px;
+}
+#container h2{
+    margin: 20px;
 }
 #container_list .accordion_container{
+    padding: 10px;
+    margin: 20px ;
     list-style-type: none;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: silver;
-    border-radius: 25px;
-    
-    
+    border-radius: 14px;
+
 }
 .container>#container_btn{
     background:linear-gradient(to bottom,rgb(101,66,255),rgb(51,46,213) );
     color: white;
     margin-top: 10%;
     margin-bottom: 10%;
-    height: 12%;
+    height: 3rem;
     width: 85%;
     border-radius: 20px;
     border:none;
@@ -76,29 +93,23 @@ body{
 .container>#container_btn:hover{
     background: rgb(48,59,89);
 }
-#container_list {
-    font-weight: 300;
-    text-shadow: 0px 0px 3px black;
-    
-}
+
 
 @media (max-width:720px){
     #block{
-        width: 100vw;
+        width: 100%;
         display: block;
     }
     .container{
         width: 100%;
     }
-    .container>#container_btn{
-        width: 100%;
-        border-radius: 0;
-        height: 10%;
-        position: fixed;
-        left: 0;
-
+    #container>#container_btn{
+        height: 4rem;
     }
+   
     body{
         display: block;
+        min-width: 320px;
+        
     }
 }
